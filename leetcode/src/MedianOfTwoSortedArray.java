@@ -4,16 +4,16 @@ import java.util.Arrays;
  * Created by Ting on 2/4/2017.
  */
 public class MedianOfTwoSortedArray {
-
-    public static void main(String[] args) throws Exception {
-        int[] a = {1,3,5}, b = {2, 4};
-        int k = 3;
+    public static void main(String[] args) {
+        int[] a = {1, 3, }, b = {2,4,5,6,7};
+        int k = 6;
         System.out.println(findKth(a, b, k));
+//        System.out.println(k);
 
 
     }
 
-    public static int findKth(int[] a, int[] b, int k) throws Exception {
+    public static int findKth(int[] a, int[] b, int k) {
         int lenA = a.length;
         int lenB = b.length;
         if (lenA>lenB){
@@ -21,7 +21,8 @@ public class MedianOfTwoSortedArray {
         }
         // lenB >= lenA
         if (lenA+lenB<k){
-            throw new Exception();
+            System.out.println("shorter than k");
+            return -1;
         }
         if (lenA == 0){
             return b[k-1];
@@ -46,4 +47,7 @@ public class MedianOfTwoSortedArray {
 
 
     }
+
+
+
 }
